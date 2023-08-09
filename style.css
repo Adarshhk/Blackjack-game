@@ -1,0 +1,56 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("img/table.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+ul{
+    text-align: left;
+    font-style: italic;
+}
+li{
+    padding: 10px;
+    font-size: large;
+}
+h1 {
+    color: goldenrod;
+    font-size: 3em;
+}
+
+#message-el {
+    font-size: 2em;
+    font-style: italic;
+}
+
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
+#cards-el,#sum-el{
+    font-size: 2em;
+}
+button {
+    color: #016f32;
+    width: 250px;
+    background: goldenrod;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+}
+a{
+    color: #016f32;
+    width: 250px;
+    background: goldenrod;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    text-decoration: none;
+}
