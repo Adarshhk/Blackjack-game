@@ -9,9 +9,13 @@
         <p id="message-el">Want to play a round?</p>
         <p id="cards-el">Cards:</p>
         <p id="sum-el">Sum:</p>
+        <div id="pop-up" class="popup">
+            <p id="close-popup"><a id="cross" onclick="hidepopup()">X</a></p>
+            <p id="popup-msg"></p>
+        </div>
         <button onclick="startGame()">NEW GAME</button><br/>
         <button onclick="newCard()">NEW CARD</button>
-        <!-- <p id="player-el" style="color: black; "></p> -->
+        <p id="player-el"></p>
         <script src="index.js"></script>
     </body>
 </html>
