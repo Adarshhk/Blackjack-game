@@ -24,10 +24,45 @@ h1 {
     font-style: italic;
 }
 
-/* 3. Make sure that the two buttons have some space between
-each other when they are rendered out vertically */
+
 #cards-el,#sum-el{
     font-size: 2em;
+}
+.popup {
+    background-color: rgb(221, 240, 238);
+    border: 1px solid black;
+    border-radius: 8px;
+    width:500px;
+    height:300px;
+    position:absolute;
+    top:35%;
+    left:38%;
+    box-shadow:2px 2px rgba(0, 0, 0, 0.329);
+    margin:-50px 0 0 -100px; /* [-(height/2)px 0 0 -(width/2)px] */
+    display:none;
+  }
+
+#popup-msg{
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 15%;
+
+}
+#close-popup{
+    color : black;
+    text-align: right;
+    padding-right: 25px;
+    font-size: 20px;
+}
+#cross{
+    background-color: rgba(0, 0, 0, 0);
+}
+#cross:hover{
+    color: red;
+
+    transition: all 0.2s ease-out;
 }
 button {
     color: #016f32;
@@ -54,3 +89,15 @@ a{
     margin-top: 2px;
     text-decoration: none;
 }
+ #player-el{
+    color: rgb(36, 27, 27);
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid rgb(0, 0, 0);
+    display: block;
+    margin-top: 3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: ;
+    
+ }
