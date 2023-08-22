@@ -3,12 +3,20 @@ let sum = 0
 let hasBlackJack = false
 let isAlive = false
 let message = ""
+let popupmsg = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
-
+let popup = document.getElementById("pop-up")
+let popupm = document.getElementById("popup-msg")
 let audio = new Audio();
 audio.src = "soundEffects.mp3";
+
+let lose = new Audio();
+lose.src = "Losing.mp3"
+
+let gameOver = new Audio();
+gameOver.src = "gameover.mp3"
 
 let player = {
     n : "Player",
@@ -16,6 +24,7 @@ let player = {
 }
  
 let playerId = document.getElementById("player-el");
+
 playerId.textContent = player.n + ": " + player.chips + "$"
 
 function getRandomCard() {
@@ -29,19 +38,37 @@ function getRandomCard() {
     }
 }
 
+function hidepopup()
+{
+    popup.style.display = 'none';
+}
+
 function playAudio()
 {
 
 }
-
 function startGame() {
-    isAlive = true
-    hasBlackJack = false
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
-    renderGame()
+    if(player.chips < 50)
+    {
+        popupmsg = "Game Over. Please Refresh the page!";
+        popupm.textContent = popupmsg;
+        gameOver.play()
+        popup.style.display = 'block';
+        isAlive = false;
+    }
+    else
+    {
+        isAlive = true
+        hasBlackJack = false
+        let firstCard = getRandomCard()
+        let secondCard = getRandomCard()
+        cards = [firstCard, secondCard]
+        sum = firstCard + secondCard
+        player.chips-=50
+        playerId.textContent = player.n + ": " + player.chips + "$"
+        renderGame()
+    }
+    
 }
 
 function renderGame() {
@@ -56,8 +83,17 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         audio.play();
+
+        popupmsg = "You've got Blackjack!";
+        popupm.textContent = popupmsg;
+        popup.style.display = 'block';
+        
+        if(player.chips == 0) player.chips = 50;
+        else player.chips += player.chips;
+        playerId.textContent = player.n + ": " + player.chips + "$"
         hasBlackJack = true
     } else {
+        lose.play();
         message = "You're out of the game!"
         isAlive = false
     }
